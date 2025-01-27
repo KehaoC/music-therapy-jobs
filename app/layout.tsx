@@ -6,6 +6,7 @@ import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import type { Metadata, Viewport } from 'next'
 import { Inter as FontSans } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const fontSans = FontSans({
@@ -49,6 +50,20 @@ export default function RootLayout({
     process.env.NEXT_PUBLIC_ENABLE_SAVE_CHAT_HISTORY === 'true'
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TWLZW6G49G"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TWLZW6G49G');
+          `}
+        </Script>
+      </head>
       <body className={cn('font-sans antialiased', fontSans.variable)}>
         <ThemeProvider
           attribute="class"
