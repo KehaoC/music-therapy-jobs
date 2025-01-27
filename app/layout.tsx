@@ -13,23 +13,23 @@ const fontSans = FontSans({
   variable: '--font-sans'
 })
 
-const title = 'Morphic'
+const title = 'Music Therapy Jobs'
 const description =
-  'A fully open-source AI-powered answer engine with a generative UI.'
+  'Search for music therapy jobs and find the right one for you.'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://morphic.sh'),
-  title,
-  description,
+  metadataBase: new URL('https://musictherapyjobs.com'),
+  title: 'Music Therapy Jobs',
+  description: 'Search for music therapy jobs and find the right one for you.',
   openGraph: {
-    title,
-    description
+    title: 'Music Therapy Jobs',
+    description: 'Search for music therapy jobs and find the right one for you.'
   },
   twitter: {
     title,
     description,
     card: 'summary_large_image',
-    creator: '@miiura'
+    creator: '@coholcai'
   }
 }
 

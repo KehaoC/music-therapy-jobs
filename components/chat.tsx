@@ -17,14 +17,14 @@ export function Chat({
   query?: string
 }) {
   const {
-    messages,
-    input,
-    handleInputChange,
-    handleSubmit,
-    isLoading,
-    setMessages,
-    stop,
-    append
+    messages,  // 当前消息列表
+    input,  // 当前输入框的值
+    handleInputChange,  // 处理输入框的值变化
+    handleSubmit,  // 处理提交消息
+    isLoading,  // 是否正在加载
+    setMessages,  // 设置消息列表
+    stop,  // 停止聊天
+    append  // 添加消息
   } = useChat({
     initialMessages: savedMessages,
     id: CHAT_ID,
