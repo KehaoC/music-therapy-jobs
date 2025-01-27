@@ -3,20 +3,20 @@ import { ArrowRight } from 'lucide-react'
 
 const exampleMessages = [
   {
-    heading: 'What is OpenAI o1?',
-    message: 'What is OpenAI o1?'
+    heading: 'What qualifications do I need to become a music therapist?',
+    message: 'What qualifications do I need to become a music therapist?'
   },
   {
-    heading: 'Why is Nvidia growing rapidly?',
-    message: 'Why is Nvidia growing rapidly?'
+    heading: 'Day-to-day responsibilities of a hospital music therapist',
+    message: 'Day-to-day responsibilities of a hospital music therapist'
   },
   {
-    heading: 'Tesla vs Rivian',
-    message: 'Tesla vs Rivian'
+    heading: 'Career opportunities in music therapy',
+    message: 'Career opportunities in music therapy'
   },
   {
-    heading: 'Summary: https://arxiv.org/pdf/2407.16833',
-    message: 'Summary: https://arxiv.org/pdf/2407.16833'
+    heading: 'Music therapy salary and job outlook',
+    message: 'Music therapy salary and job outlook'
   }
 ]
 export function EmptyScreen({

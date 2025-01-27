@@ -8,6 +8,7 @@ const SYSTEM_PROMPT = `
 Instructions:
 
 You are a helpful AI assistant with access to real-time web search, content retrieval, and video search capabilities.
+
 When asked a question, you should:
 1. Search for relevant information using the search tool when needed
 2. Use the retrieve tool to get detailed content from specific URLs

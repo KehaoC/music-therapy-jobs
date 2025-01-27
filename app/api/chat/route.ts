@@ -14,7 +14,8 @@ import { cookies } from 'next/headers'
 
 export const maxDuration = 30
 
-const DEFAULT_MODEL = 'openai:gpt-4o-mini'
+// const DEFAULT_MODEL = 'openai:gpt-4o-mini'
+const DEFAULT_MODEL = 'google:gemini-1.5-flash-latest'
 
 export async function POST(req: Request) {
   try {

@@ -29,7 +29,7 @@ export default function HomePage() {
             <Music className="text-[#40E0D0] h-12 w-12" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#40E0D0] to-[#20B2AA]">
-            Find Your Perfect Music Therapy Job
+            Everything you want to know about music therapy jobs
           </h1>
           <p className="text-xl mb-8 text-gray-600">
             Harmonize your career with the perfect opportunity

@@ -1,14 +1,14 @@
-import { tool } from 'ai'
-import Exa from 'exa-js'
 import { searchSchema } from '@/lib/schema/search'
-import { sanitizeUrl } from '@/lib/utils'
 import {
   SearchResultImage,
-  SearchResults,
   SearchResultItem,
+  SearchResults,
   SearXNGResponse,
   SearXNGResult
 } from '@/lib/types'
+import { sanitizeUrl } from '@/lib/utils'
+import { tool } from 'ai'
+import Exa from 'exa-js'
 
 export const searchTool = tool({
   description: 'Search the web for information',

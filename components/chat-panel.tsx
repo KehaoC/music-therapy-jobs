@@ -58,14 +58,27 @@ export function ChatPanel({
   // if query is not empty, submit the query
   useEffect(() => {
     if (isFirstRender.current && query && query.trim().length > 0) {
+      const enhancedQuery = `${query} (Please focus on music therapy jobs and related information)`
       append({
         role: 'user',
-        content: query
+        content: enhancedQuery
       })
       isFirstRender.current = false
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
+
+  const handleEnhancedSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const enhancedInput = `${input} (Please focus on music therapy jobs and related information)`
+    const fakeEvent = {
+      preventDefault: () => {},
+      target: {
+        input: { value: enhancedInput }
+      }
+    } as any
+    handleSubmit(fakeEvent)
+  }
 
   return (
     <div
@@ -76,14 +89,16 @@ export function ChatPanel({
           : 'fixed bottom-8 left-0 right-0 top-24 flex flex-col items-center justify-center'
       )}
     >
+      {/* 输入表单 */}
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleEnhancedSubmit}
         className={cn(
           'max-w-3xl w-full mx-auto',
           messages.length > 0 ? 'px-0 py-4' : 'px-6'
         )}
       >
         <div className="relative flex items-center w-full gap-2">
+          {/* 新聊天 */}
           {messages.length > 0 && (
             <Button
               variant="ghost"
@@ -95,7 +110,9 @@ export function ChatPanel({
               <Plus className="size-4 group-hover:rotate-90 transition-all" />
             </Button>
           )}
+          {/* 模型选择 */}
           {messages.length === 0 && <ModelSelector />}
+          {/* 输入框 */}
           <Textarea
             ref={inputRef}
             name="input"
@@ -104,7 +121,7 @@ export function ChatPanel({
             tabIndex={0}
             onCompositionStart={handleCompositionStart}
             onCompositionEnd={handleCompositionEnd}
-            placeholder="Ask a question..."
+            placeholder="Ask about music therapy jobs, positions, requirements..."
             spellCheck={false}
             value={input}
             className="resize-none w-full min-h-12 rounded-fill bg-muted border border-input pl-4 pr-10 pt-3 pb-1 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
